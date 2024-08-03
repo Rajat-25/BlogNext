@@ -30,8 +30,8 @@ const AuthInputField = <T,>({
       const val = userData[idx] as string;
 
       return (
-        <div className='flex flex-col gap-5' key={key}>
-          <label htmlFor={id} className=''>
+        <div className='flex flex-col gap-3' key={key}>
+          <label htmlFor={id} className='text-sm md:text-base '>
             {label}
           </label>
 
@@ -50,24 +50,24 @@ const AuthInputField = <T,>({
   );
 
   return (
-    <div className='w-6/12 flex flex-col shadow-lg border   gap-4 p-6 rounded-lg'>
+    <div className='w-[20rem] sm:w-[22.5rem] p-8  flex flex-col shadow-xl border gap-4 rounded-lg'>
       <div className='flex justify-center'>
-        <h2 className='text-2xl font-normal'>{title}</h2>
+        <h2 className='text-lg md:text-2xl font-medium'>{title}</h2>
       </div>
 
-      {isError ? <div className='text-md text-red-700'>{errMsg}</div> : null}
+      {isError ? <div className='text-base text-red-700'>{errMsg}</div> : null}
       {renderedItems}
 
       <Button
-        extraClass='p-2 '
+        extraClass='text-white p-2 text-base md:text-lg font-semibold '
         btnType='submit'
         btnVariant='primary'
-        text={title}
+        text='Submit'
         onClickHandler={() => callFn(userData)}
       />
-      <p className='flex justify-center'>
+      <p className='flex justify-center text-sm md:text-[1rem]'>
         {subTitle}
-        <Link to={directTo}>
+        <Link to={directTo} className=''>
           {title == 'Sign Up' ? <>&nbsp;Sign In</> : <>&nbsp;Sign Up</>}
         </Link>
       </p>

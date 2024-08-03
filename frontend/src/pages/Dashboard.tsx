@@ -18,18 +18,19 @@ const Dashboard = () => {
     token,
   });
 
-  const fieldClass = ' w-10/12 p-4 rounded-full shadow-md ';
+  const fieldClass = ' p-4 border-b text-sm sm:text-base rounded-full shadow  ';
 
   if (blogLoading) {
     return <div>Loading...</div>;
   } else {
     const { firstName, lastName, email } = data as CurrUserType;
     return (
-      <div className='h-screen w-screen grid grid-cols-4 p-2 gap-4 '>
-        <div className='flex  justify-center items-start    col-span-1'>
-          <img src={'./Img.png'} className='w-40 h-40' alt='' />
+      <div className='mx-auto  w-[80%] flex flex-col items-center '>
+        <div className='flex flex-col items-center  '>
+          <img src={'./Img.png'} className='w-[7rem] h-[7rem] sm:w-[10rem] sm:h-[10rem]' alt='' />
+          <h2 className='text-2xl font-semibold'>{firstName[0].toUpperCase()+firstName.slice(1)}</h2>
         </div>
-        <div className=' rounded flex flex-col gap-8 col-span-3 p-4 '>
+        <div className='w-full rounded flex flex-col gap-4 p-4 '>
           <div className={fieldClass}>
             <span className='font-medium'>First name</span> : {firstName}
           </div>

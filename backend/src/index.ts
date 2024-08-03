@@ -1,5 +1,6 @@
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import 'dotenv/config';
 import express, { Request, Response } from 'express';
 import { connectDB } from './db/';
 import indexRouter from './routes/index';
@@ -13,7 +14,7 @@ connectDB();
 
 app.use('/api/v1/', indexRouter);
 
-app.get('/test', (req:Request, res:Response) => {
+app.get('/test', (req: Request, res: Response) => {
   return res.status(201).send('Hello');
 });
 

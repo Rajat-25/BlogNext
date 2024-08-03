@@ -32,6 +32,9 @@ const Bookmark: React.FC = () => {
     content = <div>Loading...</div>;
   } else {
     content = bookmarkData?.map((data: BlogResponseType) => {
+      const style =
+        'hover:scale-125 w-[1rem] h-[1rem] sm:w-[1.3rem] sm:h-[1.3rem] lg:w-[1.5rem] lg:h-[1.5rem]';
+
       return (
         <BlogItem
           data={data}
@@ -40,16 +43,23 @@ const Bookmark: React.FC = () => {
             <>
               <BookmarkIcon
                 onClick={(e) => handleBookmark(e, data)}
-                className='fill-yellow-400 hover:scale-125  size-6'
+                className={`fill-yellow-400 ${style}`}
               />
-              <ArrowUpRightIcon className='hover:scale-125  size-6' />
+              <ArrowUpRightIcon className={`fill-yellow-400 ${style}`} />
             </>
           }
         />
       );
     });
   }
-  return <div className='p-6 flex flex-col gap-6'>{content}</div>;
+  return (
+    <div className='p-6 flex flex-col gap-6'>
+      <h2 className='text-lg sm:text-2xl text-center font-semibold'>
+        Read now 
+      </h2>
+      {content}
+    </div>
+  );
 };
 
 export default Bookmark;

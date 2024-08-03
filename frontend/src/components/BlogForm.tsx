@@ -43,9 +43,12 @@ const BlogForm: React.FC<BlogFormType> = ({ func, data }) => {
   };
 
   return (
-    <form className=' flex flex-col gap-4 p-2 mx-auto max-w-4xl'>
+    <form className='mx-auto mt-8 w-[80%] border border-neutral-300 flex flex-col gap-6 p-4 rounded-xl  '>
       <div className='flex flex-col gap-4'>
-        <label className='block text-xl' htmlFor='title_edit'>
+        <label
+          className='block text-base sm:text-lg lg:text-xl font-medium'
+          htmlFor='title_edit'
+        >
           Title
         </label>
 
@@ -60,7 +63,10 @@ const BlogForm: React.FC<BlogFormType> = ({ func, data }) => {
       </div>
 
       <div className='flex flex-col gap-4'>
-        <label className='block text-xl' htmlFor='description_edit'>
+        <label
+          className='block text-base sm:text-lg lg:text-xl font-medium'
+          htmlFor='description_edit'
+        >
           Description
         </label>
 
@@ -77,7 +83,7 @@ const BlogForm: React.FC<BlogFormType> = ({ func, data }) => {
 
       <Button
         onClickHandler={submitHandler}
-        extraClass='p-2 m-2 text-white w-full'
+        extraClass='p-2 m-2 text-white w-full text-base sm:text-lg lg:text-xl font-medium'
         btnVariant='primary'
         text='Submit'
       />

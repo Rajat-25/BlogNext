@@ -28,27 +28,20 @@ const Pagination: React.FC<PaginationType> = ({ isPrev, isNext, pgNo }) => {
     navigate(expPathDefault + '/1');
   };
 
+  const style = 'w-[1.2rem] h-[1.2rem] md:w-[1.5rem] md:h-[1.5rem]';
+
   return (
-    <div className='flex justify-center items-center gap-4'>
+    <div className='flex justify-center items-center gap-4 text-base sm:text-xl'>
       {isPrev ? null : (
-        <ChevronLeftIcon
-          onClick={prevHandler}
-          className='hover:scale-125 size-6'
-        />
+        <ChevronLeftIcon onClick={prevHandler} className={style} />
       )}
-      <div
-        onClick={toPageOne}
-        className='cursor-pointer hover:scale-105 text-xl'
-      >
+      <div onClick={toPageOne} className='cursor-pointer hover:scale-105'>
         1
       </div>
-      {pgNo == 1 ? null : <div className='text-xl'>{pgNo}</div>}
+      {pgNo == 1 ? null : <div className=''>{pgNo}</div>}
       {isNext ? null : (
         <>
-          <ChevronRightIcon
-            onClick={nextHandler}
-            className='hover:scale-125 size-6'
-          />
+          <ChevronRightIcon onClick={nextHandler} className={style} />
         </>
       )}
     </div>

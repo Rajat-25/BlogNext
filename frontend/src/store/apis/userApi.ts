@@ -13,7 +13,7 @@ const userApi = createApi({
         query: (body) => {
           return {
             method: 'POST',
-            url: '/user/signin',
+            url: '/signin',
             body,
           };
         },
@@ -23,7 +23,7 @@ const userApi = createApi({
         query: (body) => {
           return {
             method: 'POST',
-            url: '/user/signup',
+            url: '/signup',
             body,
           };
         },

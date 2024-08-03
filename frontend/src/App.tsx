@@ -30,7 +30,7 @@ function App() {
       children: [
         {
           index: true,
-          element: <SignUp />,
+          element: isUserLoggedIn ? <Explore /> : <SignUp />,
         },
         {
           path: urlPath.signup,

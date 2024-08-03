@@ -10,17 +10,17 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch, str }) => {
   };
 
   return (
-    <div className='flex border px-6 py-2 rounded-full '>
+    <div className=' flex border px-6 py-2 rounded-full '>
       <input
         onChange={onChangeHandler}
-        className='w-full focus:outline-none '
+        className='w-full focus:outline-none text-xs sm:text-base lg:text-lg '
         type='text'
         value={filterStr}
         placeholder='Search...'
       />
       <MagnifyingGlassIcon
         onClick={() => onSearch(filterStr)}
-        className='size-6'
+        className='text-slate-400 w-[1rem] h-[1rem] sm:w-[1.4rem] sm:h-[1.4rem]'
       />
     </div>
   );

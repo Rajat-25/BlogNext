@@ -7,13 +7,13 @@ const ReadBlog: React.FC = () => {
   const { title, description, author } = currentBlog as BlogResponseType;
   return (
     <div className='max-w-2xl mx-auto my-8 p-6 bg-white shadow-lg rounded-lg'>
-      <h1 className='text-3xl font-bold mb-4'>{title}</h1>
+      <h1 className='text-xl sm:text-3xl font-bold mb-4'>{title}</h1>
       <div className='prose max-w-none'>
-        <p>{description}</p>
+        <p className='text-sm sm:text-base'>{description}</p>
       </div>
 
       <div className='flex justify-end'>
-        <p className='text-slate-500 text-md'>{author}</p>
+        <p className='text-slate-500 text-base'>{author}</p>
       </div>
     </div>
   );

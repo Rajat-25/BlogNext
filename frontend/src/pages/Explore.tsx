@@ -10,7 +10,7 @@ import {
   RootState,
   useAddBookmarkBlogMutation,
   useFetchAllBlogsQuery,
-  useRemoveBookmarkBlogMutation
+  useRemoveBookmarkBlogMutation,
 } from '../store';
 import { filteredBlogs } from '../utils';
 
@@ -30,7 +30,6 @@ const Explore: React.FC = () => {
     pgNo,
   });
 
- 
   const [addBookmarkBlog] = useAddBookmarkBlogMutation();
   const [removeBookmarkBlog] = useRemoveBookmarkBlogMutation();
 
@@ -57,6 +56,7 @@ const Explore: React.FC = () => {
       blogs.map((data: BlogResponseType) => {
         const { _id } = data as BlogResponseType;
         const isBookMarked = bookmark.includes(_id) ? 'fill-yellow-400' : '';
+        const style='hover:scale-125 w-[1rem] h-[1rem] sm:w-[1.3rem] sm:h-[1.3rem] lg:w-[1.5rem] lg:h-[1.5rem]'
 
         return (
           <BlogItem
@@ -66,9 +66,9 @@ const Explore: React.FC = () => {
               <>
                 <BookmarkIcon
                   onClick={(e) => handleBookmark(e, data)}
-                  className={`hover:scale-125 size-6 ${isBookMarked} `}
+                  className={`${style} ${isBookMarked} `}
                 />
-                <ArrowUpRightIcon className='hover:scale-125  size-6' />
+                <ArrowUpRightIcon className={style} />
               </>
             }
           />
@@ -96,11 +96,9 @@ const Explore: React.FC = () => {
   }
 
   return (
-    <div className='h-screen w-screen  px-8 py-4 '>
-      <div className='flex flex-col gap-6 '>
-        <SearchBar onSearch={onSearch} str={filterStr} />
-        {content}
-      </div>
+    <div className='p-6 flex flex-col gap-y-4 '>
+      <SearchBar onSearch={onSearch} str={filterStr} />
+      {content}
     </div>
   );
 };
